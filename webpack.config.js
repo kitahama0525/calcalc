@@ -7,10 +7,10 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
   mode: 'development',
   devtool: 'source-map',
-  entry: './src/javascripts/main.js',
+  entry: './app/assets/js/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'javascripts/[name]-[hash].js',
+    filename: 'assets/js/[name].js',
   },
   module: {
     rules: [
@@ -65,13 +65,13 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|jpeg)/,
+        test: /\.(png|jpg|jpeg|gif|svg)/,
         use: [
           {
             loader: 'file-loader',
             options: {
               esModule: false,
-              name: 'images/[name]-[hash].[ext]',
+              name: 'assets/images/[name].[ext]',
               publicPath: '/',
             }
           },
@@ -105,18 +105,18 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
-      filename: './stylesheets/[name]-[hash].css',
+      filename: './assets/css/[name].css',
     }),
     new HtmlWebpackPlugin({
-      template: './src/templates/index.pug',
+      template: './app/index.pug',
       filename: 'index.html',
     }),
     new HtmlWebpackPlugin({
-      template: './src/templates/access/index.pug',
+      template: './app/access/index.pug',
       filename: 'access/index.html',
     }),
     new HtmlWebpackPlugin({
-      template: './src/templates/members/index.pug',
+      template: './app/members/index.pug',
       filename: 'members/index.html',
     }),
     new CleanWebpackPlugin(),
