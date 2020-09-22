@@ -1,4 +1,3 @@
-import './reactApp.jsx';
+// import './reactApp.jsx';
 import '../css/main.scss';
-
 

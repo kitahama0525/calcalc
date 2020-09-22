@@ -45,11 +45,18 @@ html(lang="ja")
       //- スマホ用アイコン
       link(rel="apple-touch-icon" href="/apple-touch-icon.png")
 
-    // CSS
-    block css
 
 
   body
-    include inc/layout/_header.pug
-    block content
-    include inc/layout/_footer.pug
+    main.l-main
+      .c-login-form
+        .c-login-form__wrap
+          .c-login-form__box
+            .c-login-form__logo: img(src="#")
+            .c-login-form__title 新規登録
+            form(action="/login/" method="POST")
+              .c-login-form__input: input(type="text" name="email" placeholder="メールアドレス")
+              .c-login-form__input: input(type="password" name="password" placeholder="パスワード")
+              .c-login-form__buttons
+                button(type="submit" value="register") 新規登録
+                a(href="/login/") ログインページへ

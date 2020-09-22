@@ -71,7 +71,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               esModule: false,
-              name: 'assets/images/[name].[ext]',
+              name: 'images/[name].[ext]',
               publicPath: '/',
             }
           },
@@ -112,12 +112,8 @@ module.exports = {
       filename: 'index.html',
     }),
     new HtmlWebpackPlugin({
-      template: './app/access/index.pug',
-      filename: 'access/index.html',
-    }),
-    new HtmlWebpackPlugin({
-      template: './app/members/index.pug',
-      filename: 'members/index.html',
+      template: './app/register/index.pug',
+      filename: 'register/index.html',
     }),
     new CleanWebpackPlugin(),
   ],
