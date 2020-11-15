@@ -1,0 +1,44 @@
+//- filename: index.jade
+//- description: サイトのトップページ
+
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "food-register" // ページのID
+  - current.title = "食べもの登録" // タイトル
+  - current.description = "これは食べもの登録の説明文です" // 説明文
+  - current.bodyClass = "top" // body に付与するクラス
+  - current.depth = 2 // ページの階層
+
+block body
+  main.l-main
+    h2.c-heading.is-xlg 食べもの登録
+
+    +c.forms
+      form(action="/search/" method="POST")
+        +e.container
+          +e.block
+            +e.title 食べもの名
+            +e.input
+              input(type="name")
+          +e.block
+            +e.title カロリー
+            +e.input
+              input(type="calories")
+          +e.block
+            +e.title たんぱく質
+            +e.input
+              input(type="protein")
+          +e.block
+            +e.title 脂質
+            +e.input
+              input(type="fat")
+          +e.block
+            +e.title 炭水化物
+            +e.input
+              input(type="carbohydrate")
+          +e.block
+            +e.title 画像
+            +e.file
+              input(type="file")
+          +e.submit
+            button(type="submit").c-button.is-color-accent 登録する

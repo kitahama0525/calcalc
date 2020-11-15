@@ -1,12 +1,14 @@
-header.l-header
-  .l-header__title
-    //- h1.l-header__logo: img(src="../assets/images/logo.png")
-  .l-header__nav
-    ul
-      li: a(href="/") ホーム
-      li: a(href="/") PFCバランス
-      li: a(href="/") 食べもの検索
-      li: a(href="/") 履歴
-      li: a(href="/") 食べもの登録
-      li: a(href="/") ユーザー設定
-
+header.l-header-minimal
+  .l-header-minimal__content
+    if current.id == 'top'
+      h1.l-header-minimal__heading: +a("/"): +img("logo.png","calcalc")
+    else
+      .l-header-minimal__heading: +a("/"): +img("logo.png","calcalc")
+    nav.l-header-minimal__nav
+      ul
+        li: +a("/").js-current-nav ホーム
+        li: +a("/pfc/").js-current-nav PFCバランス
+        li: +a("/search/").js-current-nav 食べもの検索
+        li: +a("/history/").js-current-nav 履歴
+        li: +a("/food-register/").js-current-nav 食べもの登録
+        li: +a("/settings/").js-current-nav ユーザー設定

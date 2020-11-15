@@ -1,0 +1,80 @@
+
+.c-table {
+  width: 100%;
+  border-top: 1px solid $border-base-color;
+  border-left: 1px solid $border-base-color;
+  background-color: $color-white;
+  table-layout: fixed;
+
+  thead {
+    background-color: $background-color;
+    td,th {
+      border-right: 1px solid $border-base-color;
+      border-bottom: 1px solid $border-base-color;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 8px;
+
+
+      &:first-of-type {
+        width: 30%;
+      }
+      &:last-of-type {
+        width: 30%;
+      }
+    }
+  }
+
+  tbody {
+    th,
+    td {
+      text-align: center;
+      border-right: 1px solid $border-base-color;
+      border-bottom: 1px solid $border-base-color;
+      padding: rem-calc(8);
+      font-size: 12px;
+      vertical-align: top;
+      @include breakpoint(small only) {
+        padding: rem-calc(12);
+      }
+
+      &:first-of-type {
+        width: 15%;
+      }
+      &:last-of-type {
+        width: 30%;
+        text-align: left;
+      }
+    }
+
+    th {
+      color: $color-primary;
+      width: rem-calc(196);
+      border-bottom: 1px solid $color-primary;
+      @include breakpoint(small only) {
+        width: rem-calc(96);
+      }
+    }
+  }
+
+  &.is-th-bgcolor {
+    tbody {
+      th,
+      td {
+        padding: rem-calc(13) rem-calc(24);
+      }
+    }
+
+    th {
+      color: $font-base-color;
+      width: rem-calc(236);
+      position: relative;
+      background-color: $color-secondary;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

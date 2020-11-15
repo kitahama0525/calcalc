@@ -1,0 +1,28 @@
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "format" // ページのID
+  - current.title = "フォーマット" // タイトル
+  - current.description = "これはフォーマットページの説明文です" // 説明文
+  - current.bodyClass = "format" // body に付与するクラス
+  - current.depth = 2 // ページの階層
+
+block body
+  // メインビジュアル
+  +l_page_header("img-page-header-format.jpg","スタイルガイド","STYLE GUIDE")
+  +c.breadcrumb
+    .l-container
+      +e.inner
+        span: +a("/") ホーム
+        span >
+        span 私たちについて
+  section.l-section
+    .l-container
+      // テキスト関係
+      include /format/components/_text.pug
+
+      // ボタン関係
+      include /format/components/_buttons.pug
+
+      // タブ
+      include /format/components/_tab.pug
+

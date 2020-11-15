@@ -1,0 +1,52 @@
+//- filename: index.jade
+//- description: サイトのトップページ
+
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "search" // ページのID
+  - current.title = "食べもの検索" // タイトル
+  - current.description = "これは食べもの検索の説明文です" // 説明文
+  - current.bodyClass = "top" // body に付与するクラス
+  - current.depth = 2 // ページの階層
+
+block body
+  main.l-main
+    h2.c-heading.is-xlg PFCバランス
+
+    +c.search
+      form(method="GET",action="/search/")
+        +e.block
+          +e.select
+            select(name="cate")
+              option(value="" selected) -- カテゴリを選択してください --
+              option(value="ファミリーマート") ファミリーマート
+              option(value="セブンイレブン") セブンイレブン
+              option(value="ローソン") ローソン
+          +e.input
+            input(type="text", name="keyword" placeholder="キーワード")
+            button(type="submit") <i class="fa fa-search" aria-hidden="true"></i>
+
+
+    +c.card-post
+      +e.blocks
+        +loop(12)
+          +e.block
+            +e.image
+              +bgimg("img-food-01.jpg").c-card-post__bgimg
+              +e.label ファミリーマート
+            +e.content
+              +e.title さざえのつぼ焼き
+              +e.texts
+                dl
+                  dt カロリー：
+                  dd 120kcal
+                dl
+                  dt たんぱく質：
+                  dd 10g
+                dl
+                  dt 脂質：
+                  dd 10g
+                dl
+                  dt 炭水化物：
+                  dd 20g
+

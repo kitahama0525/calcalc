@@ -1,9 +1,63 @@
-extends _layout.pug
+//- filename: index.jade
+//- description: サイトのトップページ
 
-block locals
-  - var title = 'Hello Pug!';
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "top" // ページのID
+  - current.title = "トップページ" // タイトル
+  - current.description = "これはトップページの説明文です" // 説明文
+  - current.bodyClass = "top" // body に付与するクラス
+  - current.depth = 1 // ページの階層
 
-block content
+block body
   main.l-main
+    h2.c-heading.is-xlg カロリー計算
+    +c.result
+      +e.box
+        +e.title 摂取カロリー
+        +e.result
+          span.is-current 1450kcal
+          span /
+          span.is-total 1900kcal
+
+
+
+    +c.chart
+      +e.container
+        canvas#calories(width="1000" height="355")
+
+
+    +c.table-log
+      table.c-table
+        thead
+          tr
+            th 日付
+            th カロリー
+            th たんぱく質
+            th 脂質
+            th 炭水化物
+            th メモ
+        tbody
+          tr
+            td 2020年7月12日（日）9:00
+            td 300kcal
+            td 25g
+            td 10g
+            td 30g
+            td メモメモ
+          tr
+            td 2020年7月12日（日）9:00
+            td 300kcal
+            td 25g
+            td 10g
+            td 30g
+            td メモメモ
+          tr
+            td 2020年7月12日（日）9:00
+            td 300kcal
+            td 25g
+            td 10g
+            td 30g
+            td メモメモ
 
 

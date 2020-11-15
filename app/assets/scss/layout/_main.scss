@@ -1,0 +1,21 @@
+// メインカラム
+//
+// ページのメインとなるコンテンツを囲むラッパ
+//
+// markup:
+// <div class="l-main"></div>
+//
+// Styleguide 5.6.0
+
+// メインカラム
+$layout-main-width: calc(100% - 300px) !default;
+$layout-main-float: left !default;
+
+.l-main {
+  width: calc(100% - 300px);
+  min-height: 100vh;
+  padding: 64px 24px 174px;
+  margin: 0 0 0 auto;
+  background-color: $color-tertiary;
+  position: relative;
+}

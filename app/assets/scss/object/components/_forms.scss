@@ -1,0 +1,33 @@
+.c-forms {
+
+  &__container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  &__block {
+    margin-bottom: 40px;
+  }
+  &__title {
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  &__input {
+    input {
+      width: 100%;
+      outline: none;
+      padding: 16px 16px;
+      transition: all 0.3s ease;
+      border: 1px solid $border-base-color;
+      &:hover,
+      &:focus {
+        border-color: $color-primary;
+      }
+    }
+  }
+
+  &__submit {
+    margin-top: 40px;
+    text-align: center;
+  }
+}

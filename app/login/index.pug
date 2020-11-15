@@ -1,0 +1,23 @@
+extends /inc/foundation/_head.pug
+block append config
+  - current.id = "login" // ページのID
+  - current.title = "ログイン" // タイトル
+  - current.description = "これはログインの説明文です" // 説明文
+  - current.bodyClass = "login" // body に付与するクラス
+  - current.depth = 2 // ページの階層
+
+block layout
+  +c.login-form
+    +e.container
+      +e.block
+        form(method="POST", action="/")
+          +e.logo: +img("logo.png","Calcalc")
+          +e.title ログイン
+          +e.input
+            input(type="text", name="email", placeholder="メールアドレス")
+          +e.input
+            input(type="password", name="password", placeholder="パスワード")
+          +e.button
+            button(type="submit").c-button ログイン
+          +e.button
+            +a("/register/").c-button.is-accent 新規登録

@@ -1,0 +1,42 @@
+.c-search {
+  &__block {
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    margin-bottom: 36px;
+  }
+
+  &__select {
+    width: 240px;
+    margin-right: 32px;
+    flex: none;
+    select {
+      height: 61px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    position: relative;
+
+    input {
+      padding: 16px 64px 16px 32px;
+    }
+
+    button {
+      font-size: 20px;
+      letter-spacing: 0;
+      line-height: 1;
+      padding: 0;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      color: $color-accent;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+  }
+}

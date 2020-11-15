@@ -1,0 +1,111 @@
+.c-card-post {
+  &__blocks {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__block {
+    width: 356/1140*100%;
+    margin-right: 36/1140*100%;
+    background-color: $color-white;
+    margin-bottom: 32px;
+    @include box-shadow;
+    cursor: pointer;
+    position: relative;
+    &:nth-of-type(3n) {
+      margin-right: 0;
+    }
+
+    &:after {
+      content: "\f067";
+      font-family: "FontAwesome";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      background-color: $color-secondary;
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 1;
+      color: $color-white;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      &:after {
+        background-color: $color-accent;
+      }
+      .c-card-post__bgimg {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__bgimg {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease;
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 135/220*100%;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    min-width: 100px;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 20/11*1;
+    padding: 2px 8px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  &__content {
+    padding: 16px;
+  }
+
+  &__title {
+    color: $color-primary;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 24/20*1;
+    margin-bottom: 8px;
+  }
+
+  &__texts {
+    color: rgba($color-black, 0.8);
+    font-size: 12px;
+    dl {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      dt {
+
+      }
+      dd {
+
+      }
+    }
+  }
+}

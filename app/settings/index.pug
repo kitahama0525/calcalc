@@ -1,0 +1,33 @@
+//- filename: index.jade
+//- description: サイトのトップページ
+
+extends /inc/foundation/_base.pug
+block append config
+  - current.id = "settings" // ページのID
+  - current.title = "ユーザー設定" // タイトル
+  - current.description = "これはユーザー設定の説明文です" // 説明文
+  - current.bodyClass = "top" // body に付与するクラス
+  - current.depth = 2 // ページの階層
+
+block body
+  main.l-main
+    h2.c-heading.is-xlg ユーザー設定
+
+    +c.forms
+      form(action="/settings/" method="POST")
+        +e.container
+          +e.block
+            +e.title 体重
+            +e.input
+              input(type="weight")
+          +e.block
+            +e.title 身長
+            +e.input
+              input(type="height")
+          +e.block
+            +e.title 体脂肪
+            +e.input
+              input(type="bodyfat")
+
+          +e.submit
+            button(type="submit").c-button.is-color-accent 設定する

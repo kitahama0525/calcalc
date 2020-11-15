@@ -1,0 +1,8 @@
+.c-chart {
+  &__container {
+    padding: 1em;
+    background-color: $color-white;
+    margin-top: 24px;
+    @include box-shadow;
+  }
+}
